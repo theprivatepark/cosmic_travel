@@ -14,6 +14,6 @@
 
 <%= link_to "Edit Scientist", edit_scientist_path(@scientist)%>
 <br>
-<%= button_to "Delete Scientist", scientist_path(@scientist.id),
+<%= button_to "Delete Scientist", scientist_path(@scientist),
                                 method: "delete",
                                 data: {:confirm => "Are you sure?"} %>
