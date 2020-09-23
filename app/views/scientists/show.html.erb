@@ -1,0 +1,19 @@
+<h1> <%= @scientist.name %> </h1>
+
+<div>
+<ul>
+  <li> Name: <%= @scientist.name %> </li>
+  <li> Field of Study: <%= @scientist.field_of_study %> </li>
+  </ul>
+</div>
+
+<h3> Planets Visited: </h3>
+ <% @scientist.missions.each do |mission| %>
+  <li> <%= mission.planet.name %> </li>
+  <%end %>
+
+<%= link_to "Edit Scientist", edit_scientist_path(@scientist)%>
+<br>
+<%= button_to "Delete Scientist", scientist_path(@scientist.id),
+                                method: "delete",
+                                data: {:confirm => "Are you sure?"} %>

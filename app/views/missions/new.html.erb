@@ -1,0 +1,21 @@
+<% if @mission.errors %>
+  <ul>
+    <% @mission.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+    <% end %>
+  </ul>
+  <% end %>
+
+
+<%= form_for @mission do |f| %>
+  <%= f.label :name, "Name:" %>
+  <%= f.text_field :name%>
+  <br>
+  <%= f.label :planet_id, "Planet:" %>
+  <%= f.collection_select :planet_id, Planet.all, :id, :name %>
+  <br>
+  <%= f.label :scientist_id, "Scientist:" %>
+  <%= f.collection_select :scientist_id, Scientist.all, :id, :name %>
+  <br>
+  <%= f.submit "New Mission" %>
+<% end %>

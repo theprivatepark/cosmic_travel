@@ -1,0 +1,7 @@
+<h2> All Missions </h2>
+
+<div>
+  <% @missions.each do |mission | %>
+  <li> <%= link_to mission.name, mission_path(mission) %> </li>
+  <% end %>
+</div>
